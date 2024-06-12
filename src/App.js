@@ -5,6 +5,7 @@ import QuizSelection from './components/QuizSelection';
 import QuizPage from './components/QuizPage';
 import Results from './components/Results';
 import TopBar from './components/TopBar';
+import PDFViewer from './components/PDFViewer';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/select-quiz/:packNumber" component={QuizSelection} />
         <Route path="/quiz/:quizId" component={QuizPage} />
         <Route path="/results/:score" component={Results} />
+        <Route path="/pdf-viewer" component={PDFViewer} />
       </Switch>
     </Router>
   );

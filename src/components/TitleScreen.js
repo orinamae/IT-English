@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './TitleScreen.css';
 
 const TitleScreen = () => {
@@ -9,6 +10,8 @@ const TitleScreen = () => {
         history.push(`/select-quiz/${packNumber}`);
     };
 
+    
+
     return (
         <div className="title-screen">
             <h1>IT-English</h1>
@@ -17,6 +20,9 @@ const TitleScreen = () => {
             <button onClick={() => navigateToPack(2)}>Unit 2 - About myself</button>
             <button onClick={() => navigateToPack(3)}>Unit 3 - About my family</button>
             <button onClick={() => navigateToPack(4)}>Unit 4 - My office</button>
+            <Link to="/pdf-viewer">
+                <button>Справочные Материалы</button>
+            </Link>
         </div>
     );
 };
