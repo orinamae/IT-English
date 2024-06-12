@@ -5,7 +5,7 @@ import './TitleScreen.css';
 const TitleScreen = () => {
     const history = useHistory();
 
-    const navigateToPack = (packNumber) => {
+    const navigateToPack = (packNumber) => { // переход на выбраную страницу
         history.push(`/select-quiz/${packNumber}`);
     };
 
