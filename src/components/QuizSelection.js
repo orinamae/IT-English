@@ -7,7 +7,7 @@ import './QuizSelection.css';
 const QuizPack = () => {
     let { packNumber } = useParams();
 
-    const startId = (packNumber - 1) * 100 + 1; // every unit has 100 excersises
+    const startId = (packNumber - 1) * 100 + 1; // в юните максимум 100 упражнений
     const endId = packNumber * 100;
 
     const filteredQuizzes = quizzes.filter(quiz => quiz.id >= startId && quiz.id <= endId);
