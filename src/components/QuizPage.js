@@ -16,11 +16,11 @@ const QuizPage = () => {
 
   const quiz = quizzes.find(quiz => quiz.id === parseInt(quizId));
 
-  if (!quiz) return <div>Quiz not found!</div>;
+  if (!quiz) return <div>Страница не найдена</div>;
 
   const checkAnswerAndProceed = (answer) => {
     let isCorrect = false;
-    if (quiz.questions[currentQuestionIndex].type === "multiple-choice") {
+    if (quiz.questions[currentQuestionIndex].type === "multiple-choice") { // сравнение ответов разных типов
       isCorrect = answer === quiz.questions[currentQuestionIndex].correctAnswer;
     } else if (quiz.questions[currentQuestionIndex].type === "fill-in-the-blank") {
       isCorrect = answer.toLowerCase().trim() === quiz.questions[currentQuestionIndex].correctAnswer.toLowerCase().trim();
