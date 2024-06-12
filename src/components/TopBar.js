@@ -13,7 +13,7 @@ const TopBar = () => {
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    setBgImage(isDarkMode ? '/path/to/image1.jpg' : '/path/to/image2.jpg');
+    setBgImage(isDarkMode ? '../images/us.jpg' : '../uk.jpg');
     setFontColor(isDarkMode ? '#000000' : '#ffffff');
   };
 
