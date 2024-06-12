@@ -34,44 +34,44 @@ const QuizPage = () => {
       setCorrectAnswersCount(correctAnswersCount + 1);
     }
 
-    setIsAnswerSubmitted(true); // Set answer submission state
+    setIsAnswerSubmitted(true); // если отвечен то true
 
-    if (currentQuestionIndex >= quiz.questions.length - 1) {
+    if (currentQuestionIndex >= quiz.questions.length - 1) { // если последний вопрос отвечен то перейти на страницу результатов
       history.push(`/results/${correctAnswersCount + (isCorrect ? 1 : 0)}`);
-    } else {
+    } else { // если не последний то вопрс +1 и false
       setTimeout(() => {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
         setUserInput('');
-        setIsAnswerSubmitted(false); // Reset answer submission state
-      }, 1000); // Delay of 1 second to show answer feedback
+        setIsAnswerSubmitted(false); 
+      }, 1000); // задержка для высвечивания
     }
   };
 
-  const handleOptionSelect = (option) => { //Check if selected option is correct 
+  const handleOptionSelect = (option) => { // сравнение вариантов
     setUserInput(option);
     checkAnswerAndProceed(option);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e) => { //сравнение текста
     setUserInput(e.target.value);
   };
 
-  // For fill-in-the-blank, submit on enter key press in the input field and chek if correct
+  // нажатие enter для потдверждения
   const handleKeyPressOnBlank = (e) => {
     if (e.key === 'Enter') {
       checkAnswerAndProceed(userInput);
     }
   };
 
-  const handleMatchSetsAnswerSubmit = (answer) => { //Check if match sets are correct
+  const handleMatchSetsAnswerSubmit = (answer) => { //сравнения matchsets.js вопросов
     checkAnswerAndProceed(answer);
   };
 
-  const handleCategorySortAnswerSubmit = (answer) => { //check if sorter questions are correct
+  const handleCategorySortAnswerSubmit = (answer) => { //сравнения categorysort.js вопросов
     checkAnswerAndProceed(answer);
   };
 
-  return (
+  return ( // HTML Страница
     <div className="quiz-container">
       <h2>{quiz.name}</h2>
       <div className="question-text">
@@ -93,7 +93,7 @@ const QuizPage = () => {
               key={index}
               className={`option-button ${isAnswerSubmitted && option === quiz.questions[currentQuestionIndex].correctAnswer ? 'correct' : isAnswerSubmitted && option !== quiz.questions[currentQuestionIndex].correctAnswer ? 'incorrect' : ''}`}
               onClick={() => handleOptionSelect(option)}
-              disabled={isAnswerSubmitted} // Disable buttons after answer submission
+              disabled={isAnswerSubmitted} // 
             >
               {option}
             </button>
