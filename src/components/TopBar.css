@@ -1,0 +1,42 @@
+:root {
+    --font-color: #000000;
+    --bg-image: url('../images/us.jpg');
+  }
+  
+  body {
+    color: var(--font-color);
+    margin: 0;
+    padding-top: 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 999;
+  }
+  
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .dark-mode-toggle img {
+    width: 24px;
+    height: 24px;
+  }
